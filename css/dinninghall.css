@@ -4,7 +4,10 @@ body{
   background-color: beige;
   font-family: monospace;
 }
+
 #menu{
+  background-color: white;
   border: single;
   border-radius: 10px;
+  width: 50%;
 }
