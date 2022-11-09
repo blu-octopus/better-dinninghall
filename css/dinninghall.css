@@ -1,0 +1,10 @@
+body{
+  text-align: : center;
+  margin: 10px;
+  background-color: beige;
+  font-family: monospace;
+}
+#menu{
+  border: single;
+  border-radius: 10px;
+}
