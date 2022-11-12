@@ -5,7 +5,7 @@ body{
   font-family: monospace;
 }
 
-#menu{
+.menu{
   background-color: white;
   border: single;
   border-radius: 10px;
