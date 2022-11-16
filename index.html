@@ -1,10 +1,28 @@
 <html>
-  <link rel="stylesheet" type="text/css" href="css/dinninghall.css">
-
-    <h1> Dining hall </h1>
+  <head>
+  	<title>A better dinning hall menu for slugs</title>
+    <link rel="stylesheet" type="text/css" href="css/dinninghall.css">
+    <script src = "js/dinninghall.js"></script>
+  </head>
+  <body>
+    <h1> Dinning hall </h1>
     <p>on the menu</p>
+    <div id="myMenuBar" class="menuBar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#">Crown/Merill</a>
+      <a href="#">Cowell/Stevensons</a>
+      <a href="#">9/Lewis</a>
+      <a href="#">Porter/Kresge</a>
+    </div>
 
-    <div id"menu">
+    <div id="main">
+      <button class="openbtn" onclick="openNav()">&#9776; Open Sidebar</button>
+      <h2>Collapsed Sidebar</h2>
+      <p>Content...</p>
+    </div>
+
+    <div id="cm" class="menu">
+      <h2>Crown Merill</h2>
       <ul>
         <li>allegen hallal free chicken</li>
         <li>uncooked rice</li>
@@ -12,7 +30,37 @@
       </ul>
     </div>
 
-    <p> credits </p>
-    <p> team 7 </p>
+    <div id="cs" class="menu">
+      <h2>Cowell Stevensons</h2>
+      <ul>
+        <li>allegen hallal free chicken</li>
+        <li>uncooked rice</li>
+        <li>bees and soda</li>
+      </ul>
+    </div>
+
+    <div id="9l" class="menu">
+      <h2>9 Lewis</h2>
+      <ul>
+        <li>allegen hallal free chicken</li>
+        <li>uncooked rice</li>
+        <li>bees and soda</li>
+      </ul>
+    </div>
+
+    <div id="pk" class="menu">
+      <h2>Porter Kresge</h2>
+      <ul>
+        <li>allegen hallal free chicken</li>
+        <li>uncooked rice</li>
+        <li>bees and soda</li>
+      </ul>
+    </div>
+
+    <div id="bottom">
+      <p> credits </p>
+      <p> team 7 </p>
+    </div>
+  </body>
 
 </html>
