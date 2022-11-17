@@ -9,21 +9,36 @@
   </head>
   <body>
   <div class="parent">
-    <div class="child">
-      <!-- icon bar on the side -->
-      <div class="iconBar">
-        <a href="#">fish</a>
-        <a href="#">vegetarian</a>
-        <a href="#">pork</a>
-        <a href="#">wheat</a>
+    <div class="slideshow-container">
+      <div class="mySlides">
+        <img src="img/tempHeader.png" style="width:100%" class="dhImg">
+      </div>
+      <div class="mySlides">
+        <img src="img/tempHeader.png" style="width:100%" class="dhImg">
       </div>
 
-      <!-- side icon
+      <div class="mySlides">
+        <img src="img/tempHeader.png" style="width:100%" class="dhImg">
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <div class="slideBtns" style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
+
+    <div class="child">
       <div class="side">
-        <button id="egg" class="sideBtn"><img src="img/trogdor.png" class="sideIcon"></button>
-        <button id="fish" class="sideBtn"><img src="img/trogdor.png" class="sideIcon"></button>
-        <button id="glutenFree" class="sideBtn"><img src="img/trogdor.png" class="sideIcon"></button>
-        <button id="milk" class="sideBtn"><img src="img/trogdor.png" class="sideIcon"></button>
+        <button id="egg" class="button-89"><img src="img/trogdor.png" class="sideIcon"></button>
+        <button id="fish" class="button-89"><img src="img/trogdor.png" class="sideIcon"></button>
+        <button id="glutenFree" class="button-89"><img src="img/trogdor.png" class="sideIcon"></button>
+        <button id="milk" class="button-89"><img src="img/trogdor.png" class="sideIcon"></button>
+        <!--
         <button id="peanut" class="sideBtn"><img src="img/trogdor.png" class="sideIcon"></button>
         <button id="soy" class="sideBtn"><img src="img/trogdor.png" class="sideIcon"></button>
         <button id="treeNut" class="sideBtn"><img src="img/trogdor.png" class="sideIcon"></button>
@@ -36,46 +51,23 @@
         <button id="shellfish" class="sideBtn"><img src="img/trogdor.png" class="sideIcon"></button>
         <button id="sesame" class="sideBtn"><img src="img/trogdor.png" class="sideIcon"></button>
       </div>
-      -->
+    -->
+      <!-- icon bar on the side -->
+      <!--
+      <div class="iconBar">
+        <a href="#">fish</a>
+        <a href="#">vegetarian</a>
+        <a href="#">pork</a>
+        <a href="#">wheat</a>
+      </div>
+    -->
       <div id="main"></div>
     </div>
 
     <div class="child">
-      <h1> Dinning hall </h1>
-      <p>on the menu</p>
-      <!-- buttons to switch between dinning halls -->
-      <div id="halls" class="dhalls">
-        <button class="button-89" id="cmbtn">Crown Merill</button>
-        <button class="button-89" id="csbtn">Cowell Stevenson</button>
-        <button class="button-89" id="nlbtn">9 Lewis</button>
-        <button class="button-89" id="pkbtn">Porter Kresge</button>
-      </div>
 
-    <h1> Dining hall </h1>
-    <p>on the menu</p>
-
-      <div class="slideshow-container">
-        <div class="mySlides">
-          <img src="img/tempHeader.png" style="width:100%" class="dhImg">
-        </div>
-        <div class="mySlides">
-          <img src="img/tempHeader.png" style="width:100%" class="dhImg">
-        </div>
-
-        <div class="mySlides">
-          <img src="img/tempHeader.png" style="width:100%" class="dhImg">
-        </div>
-
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-      </div>
-
-      <div class="slideBtns" style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-        <span class="dot" onclick="currentSlide(4)"></span>
-      </div>
+      <h1> UCSC alt Dinning hall </h1>
+      <p>a better dinning hall website</p>
 
       <div class="options">
         <input type="date" id="date">
@@ -86,6 +78,14 @@
           <option value="dinner">Dinner</option>
           <option value="lateNight">Late Night</option>
         </select>
+      </div>
+
+      <!-- buttons to switch between dinning halls -->
+      <div id="halls" class="dhalls">
+        <button class="button-89" id="cmbtn">Crown Merill</button>
+        <button class="button-89" id="csbtn">Cowell Stevensons</button>
+        <button class="button-89" id="nlbtn">9 Lewis</button>
+        <button class="button-89" id="pkbtn">Porter Kresge</button>
       </div>
 
       <!--dinning halls-->
@@ -134,9 +134,12 @@
         $("#nl").hide();
         $("#pk").hide();
       </script>
+      <div id="default" class="menu">
+        click on a dinning hall button to see menu
+      </div>
     </div>
 
-    <div id="bottom">
+    <div id="bottom" >
       <p> credits </p>
       <p> team 7 </p>
     </div>
