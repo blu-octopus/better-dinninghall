@@ -8,11 +8,8 @@ body{
   left: 50%;
 }
 .side {
-  top: 5%;
-  left: 5%;
   float: left;
-  max-width: 5%;
-  margin-bottom: 0;
+  max-width: 50px;
   padding: 5%;
 }
 
@@ -60,7 +57,9 @@ body{
 }
 .child {
   display: inline-block;
-  padding: 1rem 1rem;
+  padding: 5%;
+  border: 1px solid black;
+
 }
 
 #bottom{
