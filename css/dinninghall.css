@@ -1,25 +1,68 @@
-body{
-  margin: 10px;
+body {
+  text-align: center;
+  margin: 0;
   background-color: beige;
+  font-family: monospace;
 }
+
+.wrapper {
+  width: 100%;
+  height: 2000px;
+  margin: 0;
+}
+
 .options {
   margin: 10px;
   position: relative;
   left: 50%;
+  width: 25%;
 }
+
+/* sticky doesnt work for some ungodly reason */
 .side {
+  /* position: -webkit-sticky; /*Safari*/
+  position: fixed;
+  top: 50;
+  left: 50;
   float: left;
-  max-width: 50px;
-  padding: 5%;
+  max-width: 7%;
+  margin-left: 15%;
 }
 
+/* CSS for button https://getcssscan.com/css-buttons-examples*/
 .sideBtn {
-  margin: 5px;
+  --b: 3px;   /* border thickness */
+  --s: .45em; /* size of the corner */
+  --color: #373B44;
+
+  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .6em;
+  font-size: 16px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
-.sideIcon {
-  max-width: 50px;
-  max-height: 50px;
+.sideBtn:hover,
+.sideBtn:focus-visible{
+  --_p: 0px;
+}
+
+.sideBtn:active {
+  background: var(--color);
+  color: #fff;
 }
 
 .footer {
@@ -51,28 +94,10 @@ body{
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-}
-.parent {
-  border: 1px solid black;
-}
-.child {
-  display: inline-block;
-  padding: 5%;
-  border: 1px solid black;
-
+  width: 50%;
+  margin: auto;
 }
 
-#bottom{
-  font-size: small;
-}
-/*---- BEGIN SLIDESHOW ----*/
-
-.mySlides {
-  display: none
-}
-.dhImg {
-  vertical-align: middle;
-}
 .slideshow-container {
   max-width: 30%;
   position: relative;
@@ -80,121 +105,5 @@ body{
   margin-top: 50px;
 }
 
-/* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #999999;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-.slideBtns {
-  margin: 10px;
-}
-.active,
-.dot:hover {
-  background-color: #111111;
-}
-
-/*---- END SLIDESHOW ----*/
-
-/* The sidebar menu from https://www.w3schools.com/howto/howto_css_fixed_sidebar.asp*/
-.iconBar {
-  width: 160px; /* Set the width of the sidebar */
-  position: fixed center; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: 0;
-  background-color: #111; /* Black */
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 20px;
-}
-
-/* The navigation menu links */
-.iconBar a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-}
-
-/* When you mouse over the navigation links, change their color */
-.iconBar a:hover {
-  color: #f1f1f1;
-}
-
-/* Style page content */
-.main {
-  margin-left: 140px; /* Same width as the sidebar + left position in px */
-  padding: 0px 10px;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-
-/* CSS for button https://getcssscan.com/css-buttons-examples*/
-.button-89 {
-  --b: 3px;   /* border thickness */
-  --s: .45em; /* size of the corner */
-  --color: #373B44;
-
-  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
-  color: var(--color);
-  --_p: var(--s);
-  background:
-    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
-    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
-  transition: .3s linear, color 0s, background-color 0s;
-  outline: var(--b) solid #0000;
-  outline-offset: .6em;
-  font-size: 16px;
-
-  border: 0;
-
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
-.button-89:hover,
-.button-89:focus-visible{
-  --_p: 0px;
-}
-
-.button-89:active {
-  background: var(--color);
-  color: #fff;
+.mySlides {
 }
