@@ -133,7 +133,7 @@ for (hall in diningHalls){
           $("#" + mealTable).addClass(finalKey);
           $("." + finalKey + "." + arrTables[call]).append("<tr><td><br></br></td></tr>");
           $("." + finalKey + "." + arrTables[call]).append("<tr>");
-          $("." + finalKey + "." + arrTables[call]).append("<th class = 'mealTimes'>" + finalKey + "</th>");
+          $("." + finalKey + "." + arrTables[call]).append("<th class = 'mealTimes'>" + callKey + "</th>");
           $("." + finalKey + "." + arrTables[call]).append("</tr>");
 
           for (sections in meals[callKey]){
