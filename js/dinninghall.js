@@ -92,14 +92,15 @@ for (hall in diningHalls){
 
         for (keys in mealKeys){
           finalKey = mealKeys[keys];
-          console.log(finalKey); // general meal time (breakfast / lunch / dinner)
+          // console.log(finalKey); // general meal time (breakfast / lunch / dinner)
           // console.log(meals[finalKey]);
+          $("#" + arrTables[call]).append("<tr><td><br></br></td></tr>");
           $("#" + arrTables[call]).append("<tr>");
-          $("#" + arrTables[call]).append("<th>" + finalKey + "</th>");
+          $("#" + arrTables[call]).append("<th class = 'mealTimes'>" + finalKey + "</th>");
           $("#" + arrTables[call]).append("</tr>");
 
           for (sections in meals[finalKey]){
-            console.log(sections); // sections within meal times (open bar / bakery / clean plate)
+            // console.log(sections); // sections within meal times (open bar / bakery / clean plate)
             sectionKeys = meals[finalKey][sections];
             // console.log(sectionKeys);
             $("#" + arrTables[call]).append("<tr>");
@@ -109,7 +110,7 @@ for (hall in diningHalls){
             for (items in sectionKeys) {
               // console.log(items);
               item = sectionKeys[items];
-              console.log(item); // actual items (halal chicken etc.)
+              // console.log(item); // actual items (halal chicken etc.)
               $("#" + arrTables[call]).append("<tr>");
               $("#" + arrTables[call]).append("<td>" + item + "</td>");
               $("#" + arrTables[call]).append("</tr>");
@@ -125,3 +126,12 @@ for (hall in diningHalls){
   });
 
 }
+
+$.ajax ({
+    // var 'hall' links to specific hall.
+    url: "https://api.slug.tools/food/items",
+    type: "GET",
+    success: function(data) {
+      console.log(data);
+    }
+});
