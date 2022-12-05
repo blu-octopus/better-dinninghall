@@ -63,6 +63,21 @@ $("#bnl").hide();
 $("#bpk").hide();
 
 
+
+// meal time Select
+$('#time').click(function(){
+  var option = $('#time').val();
+  console.log(option);
+  if (option != null){
+    $("#Breakfast").hide();
+    $("#Dinner").hide();
+    $("#LateNight").hide();
+    $("#Lunch").hide();
+    $("#" + option).show();
+  }
+})
+
+
 // loops through each hall and makes an API request. Asynchronous issue is here. the halls are looped through *then* the API requests are made, meaning i can't place them into lists using the "hall" variable.
 for (hall in diningHalls){
   // links API and parser
@@ -102,28 +117,31 @@ for (hall in diningHalls){
           finalKey = mealKeys[keys];
           // console.log(finalKey); // general meal time (breakfast / lunch / dinner)
           // console.log(meals[finalKey]);
-          $("#" + arrTables[call]).append("<tr><td><br></br></td></tr>");
-          $("#" + arrTables[call]).append("<tr>");
-          $("#" + arrTables[call]).append("<th class = 'mealTimes'>" + finalKey + "</th>");
-          $("#" + arrTables[call]).append("</tr>");
+          if (finalKey === "Late Night"){
+            finalKey = "LateNight";
+          };
+          $("#" + arrTables[call]).append("<table id = " + finalKey + " class = " + arrTables[call] + " ></table>");
+          $("#" + finalKey + "." + arrTables[call]).append("<tr><td><br></br></td></tr>");
+          $("#" + finalKey + "." + arrTables[call]).append("<tr>");
+          $("#" + finalKey + "." + arrTables[call]).append("<th class = 'mealTimes'>" + finalKey + "</th>");
+          $("#" + finalKey + "." + arrTables[call]).append("</tr>");
 
           for (sections in meals[finalKey]){
             // console.log(sections); // sections within meal times (open bar / bakery / clean plate)
             sectionKeys = meals[finalKey][sections];
             // console.log(sectionKeys);
-            $("#" + arrTables[call]).append("<tr>");
-            $("#" + arrTables[call]).append("<th>" + sections + "</th>");
-            $("#" + arrTables[call]).append("</tr>");
+            $("#" + finalKey + "." + arrTables[call]).append("<tr>");
+            $("#" + finalKey + "." + arrTables[call]).append("<th>" + sections + "</th>");
+            $("#" + finalKey + "." + arrTables[call]).append("</tr>");
 
             for (items in sectionKeys) {
               // console.log(items);
               item = sectionKeys[items];
               // console.log(item); // actual items (halal chicken etc.)
-              $("#" + arrTables[call]).append("<tr>");
-              $("#" + arrTables[call]).append("<td>" + item + "</td>");
-              $("#" + arrTables[call]).append("</tr>");
+              $("#" + finalKey + "." + arrTables[call]).append("<tr>");
+              $("#" + finalKey + "." + arrTables[call]).append("<td>" + item + "</td>");
+              $("#" + finalKey + "." + arrTables[call]).append("</tr>");
             };
-
           };
         };
       },
@@ -134,12 +152,3 @@ for (hall in diningHalls){
   });
 
 }
-
-$.ajax ({
-    // var 'hall' links to specific hall.
-    url: "https://api.slug.tools/food/items",
-    type: "GET",
-    success: function(data) {
-      console.log(data);
-    }
-});
