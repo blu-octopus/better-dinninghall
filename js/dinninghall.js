@@ -2,6 +2,8 @@
 //array list of
 arrHalls = {0:"cm", 1:"cs", 2:"nl", 3:"pk"};
 
+arrTables = {0:"cmt", 1:"cst", 2:"nlt", 3:"pkt"};
+
 diningHalls = {0: "20", 1: "5", 2: "40", 3: "25"};
 
 function hideAll(){
@@ -64,6 +66,23 @@ for (hall in diningHalls){
 
         // data for each dining hall
         // console.log(data);
+        // console.log(data.name);
+        if (data.name === "Porter/Kresge Dining Hall"){
+          // console.log("porter!");
+          var call = 3;
+        }
+        else if (data.name === "Cowell/Stevenson Dining Hall") {
+          // console.log("cowell!");
+          var call = 1;
+        }
+        else if (data.name === "Crown/Merrill Dining Hall"){
+          // console.log("merrill!");
+          var call = 0;
+        }
+        else if (data.name === "College Nine/John R. Lewis Dining Hall"){
+          // console.log("9!");
+          var call = 2;
+        }
 
         // short menu for each hall
         var meals = data.menu.short;
@@ -75,16 +94,25 @@ for (hall in diningHalls){
           finalKey = mealKeys[keys];
           console.log(finalKey); // general meal time (breakfast / lunch / dinner)
           // console.log(meals[finalKey]);
+          $("#" + arrTables[call]).append("<tr>");
+          $("#" + arrTables[call]).append("<th>" + finalKey + "</th>");
+          $("#" + arrTables[call]).append("</tr>");
 
           for (sections in meals[finalKey]){
             console.log(sections); // sections within meal times (open bar / bakery / clean plate)
             sectionKeys = meals[finalKey][sections];
             // console.log(sectionKeys);
+            $("#" + arrTables[call]).append("<tr>");
+            $("#" + arrTables[call]).append("<th>" + sections + "</th>");
+            $("#" + arrTables[call]).append("</tr>");
 
             for (items in sectionKeys) {
               // console.log(items);
               item = sectionKeys[items];
               console.log(item); // actual items (halal chicken etc.)
+              $("#" + arrTables[call]).append("<tr>");
+              $("#" + arrTables[call]).append("<td>" + item + "</td>");
+              $("#" + arrTables[call]).append("</tr>");
             };
 
           };
