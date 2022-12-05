@@ -1,80 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>A better dinning hall menu for slugs</title>
+    <title>A better dinning hall menu</title>
     <link rel="stylesheet" type="text/css" href="css/dinninghall.css">
     <script src = "js/dinninghall.js" defer></script>
   	<!-- Load jQuery -->
   	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   </head>
+
   <body>
-  <div class="parent">
-    <div class="child">
-      <!-- icon bar on the side -->
-      <div class="iconBar">
-        <a href="#">fish</a>
-        <a href="#">vegetarian</a>
-        <a href="#">pork</a>
-        <a href="#">wheat</a>
-      </div>
-
-      <!-- side icon
-      <div class="side">
-        <button id="egg" class="sideBtn"><img src="img/trogdor.png" class="sideIcon"></button>
-        <button id="fish" class="sideBtn"><img src="img/trogdor.png" class="sideIcon"></button>
-        <button id="glutenFree" class="sideBtn"><img src="img/trogdor.png" class="sideIcon"></button>
-        <button id="milk" class="sideBtn"><img src="img/trogdor.png" class="sideIcon"></button>
-        <button id="peanut" class="sideBtn"><img src="img/trogdor.png" class="sideIcon"></button>
-        <button id="soy" class="sideBtn"><img src="img/trogdor.png" class="sideIcon"></button>
-        <button id="treeNut" class="sideBtn"><img src="img/trogdor.png" class="sideIcon"></button>
-        <button id="alcohol" class="sideBtn"><img src="img/trogdor.png" class="sideIcon"></button>
-        <button id="vegan" class="sideBtn"><img src="img/trogdor.png" class="sideIcon"></button>
-        <button id="vegetarian" class="sideBtn"><img src="img/trogdor.png" class="sideIcon"></button>
-        <button id="pork" class="sideBtn"><img src="img/trogdor.png" class="sideIcon"></button>
-        <button id="beef" class="sideBtn"><img src="img/trogdor.png" class="sideIcon"></button>
-        <button id="halal" class="sideBtn"><img src="img/trogdor.png" class="sideIcon"></button>
-        <button id="shellfish" class="sideBtn"><img src="img/trogdor.png" class="sideIcon"></button>
-        <button id="sesame" class="sideBtn"><img src="img/trogdor.png" class="sideIcon"></button>
-      </div>
-      -->
-      <div id="main"></div>
-    </div>
-
-    <div class="child">
-      <h1> Dinning hall </h1>
-      <p>on the menu</p>
-      <!-- buttons to switch between dinning halls -->
-      <div id="halls" class="dhalls">
-        <button class="button-89" id="cmbtn">Crown Merill</button>
-        <button class="button-89" id="csbtn">Cowell Stevenson</button>
-        <button class="button-89" id="nlbtn">9 Lewis</button>
-        <button class="button-89" id="pkbtn">Porter Kresge</button>
-      </div>
-
-    <h1> Dining hall </h1>
-    <p>on the menu</p>
-
+    <div class="wrapper">
       <div class="slideshow-container">
         <div class="mySlides">
-          <img src="img/tempHeader.png" style="width:100%" class="dhImg">
+          <img src="img/tempHeader.png" style="width:100%">
         </div>
-        <div class="mySlides">
-          <img src="img/tempHeader.png" style="width:100%" class="dhImg">
-        </div>
-
-        <div class="mySlides">
-          <img src="img/tempHeader.png" style="width:100%" class="dhImg">
-        </div>
-
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-      </div>
-
-      <div class="slideBtns" style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-        <span class="dot" onclick="currentSlide(4)"></span>
       </div>
 
       <div class="options">
@@ -86,61 +25,55 @@
           <option value="dinner">Dinner</option>
           <option value="lateNight">Late Night</option>
         </select>
+        <input type="text" placeholder="Search..">
+        <button class="openbtn" onclick="openNav()">&#9776; Filters</button>
+      </div>
+
+      <!-- buttons to switch between dinning halls -->
+      <div class="side">
+        <button class="sideBtn" id="cmbtn">Crown<br>Merill</button>
+        <button class="sideBtn" id="csbtn">Cowell<br>Stevenson</button>
+        <button class="sideBtn" id="nlbtn">9<br>Lewis</button>
+        <button class="sideBtn" id="pkbtn">Porter<br>Kresge</button>
       </div>
 
       <!--dinning halls-->
       <!--crown merill-->
       <div id="cm" class="menu">
         <h2>Crown Merill</h2>
-        <ul>
-          <li>allegen hallal free chicken</li>
-          <li>uncooked rice</li>
-          <li>bees and soda</li>
-        </ul>
+        <table id = "cmt">
+        </table
       </div>
 
       <!--cowell stevensons-->
       <div id="cs" class="menu">
         <h2>Cowell Stevensons</h2>
-        <ul>
-          <li>allegen hallal free chicken</li>
-          <li>uncooked rice</li>
-          <li>bees and soda</li>
-        </ul>
+        <table id = "cst">
+        </table
       </div>
 
       <div id="nl" class="menu">
         <h2>9 Lewis</h2>
-        <ul>
-          <li>allegen hallal free chicken</li>
-          <li>uncooked rice</li>
-          <li>bees and soda</li>
-        </ul>
+        <table id = "nlt">
+        </table
       </div>
 
       <div id="pk" class="menu">
         <h2>Porter Kresge</h2>
-        <ul>
-          <li>allegen hallal free chicken</li>
-          <li>uncooked rice</li>
-          <li>bees and soda</li>
-        </ul>
+        <table id = "pkt">
+        </table
       </div>
 
-      <!-- hide all dinninghall at initial state -->
-      <script type="text/javascript">
-        $("#cm").hide();
-        $("#cs").hide();
-        $("#nl").hide();
-        $("#pk").hide();
-      </script>
+      <div id="default" class="menu">
+        Select a dining hall to see its menu
+      </div>
+
     </div>
 
-    <div id="bottom">
-      <p> credits </p>
-      <p> team 7 </p>
+    <div class="footer">
+      <p>Credits</p>
+      <p>Antonio Alegria, Max Schwab, Jaq Moore, Daphne Cheng, Cyrus Martinez-Weaver</p>
     </div>
 
-  </div>
 </body>
 </html>
