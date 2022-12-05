@@ -7,6 +7,7 @@ arrTables = {0:"cmt", 1:"cst", 2:"nlt", 3:"pkt"};
 diningHalls = {0: "20", 1: "5", 2: "40", 3: "25"};
 
 function hideAll(){
+    $("default").hide();
   for(hall in arrHalls){
     targStr = "#" + arrHalls[hall];
     console.log("hiding ", targStr);
