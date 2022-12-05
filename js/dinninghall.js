@@ -67,13 +67,19 @@ $("#bpk").hide();
 $('#time').click(function(){
   var option = $('#time').val();
   console.log(option);
-  if (option != null){
+  if (option != "null"){
     console.log("notNull");
     $(".Breakfast").hide();
     $(".Dinner").hide();
     $(".LateNight").hide();
     $(".Lunch").hide();
     $("." + option).show();
+  }
+  else {
+    $(".Breakfast").show();
+    $(".Dinner").show();
+    $(".LateNight").show();
+    $(".Lunch").show();
   }
 })
 
