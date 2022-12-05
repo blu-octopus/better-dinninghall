@@ -70,11 +70,12 @@ $('#time').click(function(){
   var option = $('#time').val();
   console.log(option);
   if (option != null){
-    $("#Breakfast").hide();
-    $("#Dinner").hide();
-    $("#LateNight").hide();
-    $("#Lunch").hide();
-    $("#" + option).show();
+    console.log("notNull");
+    $(".Breakfast").hide();
+    $(".Dinner").hide();
+    $(".LateNight").hide();
+    $(".Lunch").hide();
+    $("." + option).show();
   }
 })
 
@@ -121,27 +122,31 @@ for (hall in diningHalls){
           if (finalKey === "Late Night"){
             finalKey = "LateNight";
           };
-          $("#" + arrTables[call]).append("<table id = " + finalKey + " class = " + arrTables[call] + " ></table>");
-          $("#" + finalKey + "." + arrTables[call]).append("<tr><td><br></br></td></tr>");
-          $("#" + finalKey + "." + arrTables[call]).append("<tr>");
-          $("#" + finalKey + "." + arrTables[call]).append("<th class = 'mealTimes'>" + finalKey + "</th>");
-          $("#" + finalKey + "." + arrTables[call]).append("</tr>");
+
+          mealTable = finalKey + "1";
+
+          $("#" + arrTables[call]).append("<table id = " + mealTable + " class = " + arrTables[call] + " ></table>");
+          $("#" + mealTable).addClass(finalKey);
+          $("#" + mealTable).append("<tr><td><br></br></td></tr>");
+          $("#" + mealTable).append("<tr>");
+          $("#" + mealTable).append("<th class = 'mealTimes'>" + finalKey + "</th>");
+          $("#" + mealTable).append("</tr>");
 
           for (sections in meals[finalKey]){
             // console.log(sections); // sections within meal times (open bar / bakery / clean plate)
             sectionKeys = meals[finalKey][sections];
             // console.log(sectionKeys);
-            $("#" + finalKey + "." + arrTables[call]).append("<tr>");
-            $("#" + finalKey + "." + arrTables[call]).append("<th>" + sections + "</th>");
-            $("#" + finalKey + "." + arrTables[call]).append("</tr>");
+            $("#" + mealTable).append("<tr>");
+            $("#" + mealTable).append("<th>" + sections + "</th>");
+            $("#" + mealTable).append("</tr>");
 
             for (items in sectionKeys) {
               // console.log(items);
               item = sectionKeys[items];
               // console.log(item); // actual items (halal chicken etc.)
-              $("#" + finalKey + "." + arrTables[call]).append("<tr>");
-              $("#" + finalKey + "." + arrTables[call]).append("<td>" + item + "</td>");
-              $("#" + finalKey + "." + arrTables[call]).append("</tr>");
+              $("#" + mealTable).append("<tr>");
+              $("#" + mealTable).append("<td>" + item + "</td>");
+              $("#" + mealTable).append("</tr>");
             };
           };
         };
