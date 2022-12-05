@@ -87,7 +87,7 @@ for (hall in diningHalls){
       success: function(data) {
 
         // data for each dining hall
-        // console.log(data);
+        console.log(data);
         // console.log(data.name);
         if (data.name === "Porter/Kresge Dining Hall"){
           // console.log("porter!");
@@ -114,36 +114,37 @@ for (hall in diningHalls){
 
         for (keys in mealKeys){
           finalKey = mealKeys[keys];
+          callKey = mealKeys[keys];
           // console.log(finalKey); // general meal time (breakfast / lunch / dinner)
           // console.log(meals[finalKey]);
           if (finalKey === "Late Night"){
             finalKey = "LateNight";
           };
 
-          mealTable = finalKey + "1";
+          var mealTable = finalKey + call
 
           $("#" + arrTables[call]).append("<table id = " + mealTable + " class = " + arrTables[call] + " ></table>");
           $("#" + mealTable).addClass(finalKey);
-          $("#" + mealTable).append("<tr><td><br></br></td></tr>");
-          $("#" + mealTable).append("<tr>");
-          $("#" + mealTable).append("<th class = 'mealTimes'>" + finalKey + "</th>");
-          $("#" + mealTable).append("</tr>");
+          $("." + finalKey + "." + arrTables[call]).append("<tr><td><br></br></td></tr>");
+          $("." + finalKey + "." + arrTables[call]).append("<tr>");
+          $("." + finalKey + "." + arrTables[call]).append("<th class = 'mealTimes'>" + finalKey + "</th>");
+          $("." + finalKey + "." + arrTables[call]).append("</tr>");
 
-          for (sections in meals[finalKey]){
+          for (sections in meals[callKey]){
             // console.log(sections); // sections within meal times (open bar / bakery / clean plate)
-            sectionKeys = meals[finalKey][sections];
+            sectionKeys = meals[callKey][sections];
             // console.log(sectionKeys);
-            $("#" + mealTable).append("<tr>");
-            $("#" + mealTable).append("<th>" + sections + "</th>");
-            $("#" + mealTable).append("</tr>");
+            $("." + finalKey + "." + arrTables[call]).append("<tr>");
+            $("." + finalKey + "." + arrTables[call]).append("<th>" + sections + "</th>");
+            $("." + finalKey + "." + arrTables[call]).append("</tr>");
 
             for (items in sectionKeys) {
               // console.log(items);
               item = sectionKeys[items];
               // console.log(item); // actual items (halal chicken etc.)
-              $("#" + mealTable).append("<tr>");
-              $("#" + mealTable).append("<td>" + item + "</td>");
-              $("#" + mealTable).append("</tr>");
+              $("." + finalKey + "." + arrTables[call]).append("<tr>");
+              $("." + finalKey + "." + arrTables[call]).append("<td>" + item + "</td>");
+              $("." + finalKey + "." + arrTables[call]).append("</tr>");
             };
           };
         };
