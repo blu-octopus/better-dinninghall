@@ -1,6 +1,6 @@
 
 //array list of
-arrHalls = {0:"cm", 1:"cs", 2:"nl", 3:"pk"};
+arrHalls = {0:"cm", 1:"cs", 2:"nl", 3:"pk", 4:"default", 5:"bcm", 6:"bcs", 7:"bnl", 8:"bpk", 9:"bdefault"};
 
 arrTables = {0:"cmt", 1:"cst", 2:"nlt", 3:"pkt"};
 
@@ -26,24 +26,28 @@ const pkBtn = document.getElementById("pkbtn");
 cmBtn.addEventListener("click", function() {
   console.log("crown merill is clicked");
   hideAll();
+  $("#bcm").show();
   $("#cm").show();
 });
 //cowell stevensons is clicked, only show cs
 csBtn.addEventListener("click", function() {
   console.log("cowell stevensons is clicked");
   hideAll();
+  $("#bcs").show();
   $("#cs").show();
 });
 //nine lewis is clicked, only show cnl
 nlBtn.addEventListener("click", function() {
   console.log("nine lewis is clicked");
   hideAll();
+  $("#bnl").show();
   $("#nl").show();
 });
 //porter kresge is clicked, only show pk
 pkBtn.addEventListener("click", function() {
   console.log("porter kresge is clicked");
   hideAll();
+  $("#bpk").show();
   $("#pk").show();
 });
 
@@ -53,6 +57,10 @@ $("#cm").hide();
 $("#cs").hide();
 $("#nl").hide();
 $("#pk").hide();
+$("#bcm").hide();
+$("#bcs").hide();
+$("#bnl").hide();
+$("#bpk").hide();
 
 
 // loops through each hall and makes an API request. Asynchronous issue is here. the halls are looped through *then* the API requests are made, meaning i can't place them into lists using the "hall" variable.

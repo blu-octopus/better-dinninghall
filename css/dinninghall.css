@@ -108,20 +108,18 @@ body {
   touch-action: manipulation;
   width: 50%;
   margin: auto;
+  margin-bottom: 50px;
 }
 
 .menutbl {
   margin: auto;
 }
 
-.slideshow-container {
+.banner-container {
   max-width: 30%;
   position: relative;
   margin: auto;
   margin-top: 50px;
-}
-
-.mySlides {
 }
 
 .mealTimes {
