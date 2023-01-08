@@ -23,12 +23,7 @@ body {
   margin-left: 0;
 }
 
-.options {
-  margin: 10px;
-  position: relative;
-  left: 50%;
-  width: 25%;
-}
+
 
 /* sticky doesnt work for some ungodly reason */
 .side {
@@ -125,7 +120,7 @@ body {
 
 }
 .menu:hover{
-  box-shadow: #422800 4px 4px 0 0;
+  border: 2.5px solid #422800;
 
 }
 
@@ -150,12 +145,8 @@ body {
   position: relative;
   margin: auto;
   margin-top: 50px;
-
-  box-shadow: #422800 6px 6px 0 0;
-
 }
 .banner-container:hover{
-  box-shadow: #f7f5d6 -5px -5px 30px 0px;
 }
 
 .mealTimes {
@@ -196,3 +187,4 @@ body {
   box-shadow: 0px 0px 0 0;
   animation: ease-in 0.2s;
 }
+
